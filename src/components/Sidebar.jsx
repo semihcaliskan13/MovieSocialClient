@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, List, ListItem, ListItemButton, ListItemText, ListItemIcon, IconButton, Card } from '@mui/material'
+import { Box, List, ListItem, ListItemButton, ListItemText, ListItemIcon, IconButton, Card, Fab, Typography } from '@mui/material'
 import InboxIcon from '@mui/icons-material/Inbox';
 import { Audiotrack, ExpandLess, ExpandMore, FormatQuote, Menu, Movie, Person } from '@mui/icons-material';
 import { Link } from "react-router-dom";
@@ -63,7 +63,7 @@ const Sidebar = () => {
               </ListItemButton>
             </ListItem>
 
-            <ListItem disablePadding>
+            {/* <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
                   <InboxIcon color='violet' />
@@ -106,12 +106,20 @@ const Sidebar = () => {
                 </ListItemIcon>
                 <ListItemText primary="Inbox" />
               </ListItemButton>
-            </ListItem>
+            </ListItem> */}
 
           </List>
         </Card>
+        
       </Box>
-
+      <Box  sx={{marginTop:"500px",marginLeft:"50px",position:"fixed"}}>
+      <IconButton>
+          <Fab color="secondary">
+            <Typography >+</Typography>
+          </Fab>
+      </IconButton>
+      </Box>
+     
     </Box>
 
   )

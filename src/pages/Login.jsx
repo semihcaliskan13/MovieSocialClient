@@ -38,10 +38,9 @@ function Login() {
       UsernameOrEmail:data.get('email'),  
       Password:data.get('password'),
       
+      
     }
     console.log(data2)
-
-
     UserService.login(data2).then(function (response) {
       //handle success
       console.log(response.data.userInfo);
@@ -53,32 +52,8 @@ function Login() {
         console.log(error.response.data.message);
       });
 
-      
-      // Put the object into storage
-
-
- //Retrieve the object from storage
 var retrievedObject = localStorage.getItem('userInfo');
-
-
 console.log('retrievedObject: ', JSON.parse(retrievedObject).userId);
-
-//user'ın istediğimiz verisini de böyle çekebiliriz.
-
-
-    // UserService.getUser("/posts").then(function (response) {
-    //   response.data.map((user) => (
-    //     console.log(user.title)
-    //   ))
-
-    // })
-
-    // HttpClientService.getUserById().then(function (response) {
-    //   console.log(response.data.name)
-
-
-    // })
-
   };
 
   
@@ -116,33 +91,11 @@ console.log('retrievedObject: ', JSON.parse(retrievedObject).userId);
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
               <Grid container spacing={2}>
-                {/* <Grid item xs={12} sm={6}>
-                  <TextField
-
-                    color="secondary"
-                    autoComplete="given-name"
-                    name="firstName"
-                    required
-                    fullWidth
-                    id="firstName"
-                    label="Ad"
-                    autoFocus
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    color="secondary"
-                    required
-                    fullWidth
-                    id="lastName"
-                    label="Soyad"
-                    name="lastName"
-                    autoComplete="family-name"
-                  />
-                </Grid> */}
+                
                 <Grid item xs={12}>
                   <TextField
                     color="secondary"
+                    hidden="true"
                     required
                     fullWidth
                     id="email"
@@ -162,13 +115,7 @@ console.log('retrievedObject: ', JSON.parse(retrievedObject).userId);
                     id="password"
                     autoComplete="new-password"
                   />
-                </Grid>
-                {/* <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid> */}
+                </Grid>              
               </Grid>
               <Button
                 type="submit"

@@ -36,9 +36,21 @@ class QuotesServices {
     }
 
     postQuote(data) {
-        return http.post("/Quotes/PostQuotes", data, {
+        return http.post("/Quotes", data, {
 
         });
+    }
+    postQuoteImage(userName,quoteId,file){
+
+        let formData = new FormData();
+
+        formData.append("file", file);
+
+        return http.post(`/Quotes/PostQuotesImage/${userName}?quoteId=${quoteId}`,formData,{
+            headers: {
+                "Content-Type": "multipart/form-data",
+              },
+        })
     }
 }
 

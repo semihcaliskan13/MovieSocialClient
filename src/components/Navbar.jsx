@@ -32,7 +32,7 @@ const Navbar = () => {
     
   .then(res=>{
     console.log(res.data)
-    setImage(res.data[0])//Burası res.data olacak büyük ihtimalle çünkü back-end değişti.
+    setImage(res.data)//Burası res.data olacak büyük ihtimalle çünkü back-end değişti.
   
   })
   .catch(error=>{
@@ -136,7 +136,7 @@ var profileImg=`https://moviesocial.blob.core.windows.net/${userName}/${image}`
           horizontal: 'right',
         }}
       >
-        <Link to="profile" style={{ textDecoration:'none'}}>
+        <Link to="profile" state={{ from: userName }} style={{ textDecoration:'none'}}>
         <MenuItem> Profile</MenuItem>
         </Link>
         

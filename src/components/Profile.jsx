@@ -29,7 +29,7 @@ const [image,setImage] = useState([])
     
   .then(res=>{
     console.log(res.data)
-    setImage(res.data[0])
+    setImage(res.data)
   
   })
   .catch(error=>{

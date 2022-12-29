@@ -23,7 +23,8 @@ const PostQuote = ({ post }) => {
       userDetailServices.getPhoto(res.data.userName)
       
       .then(res=>{
-        setImage(res.data[0])
+        setImage(res.data)//burada yapı değişti.
+        console.log(res.data)
      
       })
       .catch(error=>{
@@ -39,7 +40,7 @@ const PostQuote = ({ post }) => {
 },[])
 
 
-var imgg= "https://image.tmdb.org/t/p/w154/"+post.movie.posterPath
+var imgg= "https://image.tmdb.org/t/p/w500/"+post.movie.posterPath
 var profileImg=`https://moviesocial.blob.core.windows.net/${userName}/${images}`
 
 
@@ -83,7 +84,7 @@ var profileImg=`https://moviesocial.blob.core.windows.net/${userName}/${images}`
             state={{ from: post.movieId }}
             >
               <CardMedia
-                sx={{ width: "100%", marginLeft: "6%", borderRadius: "4%" }}
+                sx={{ width: "80%", marginLeft: "6%", borderRadius: "4%" }}
                 component="img"
 
                 image= {imgg}
